@@ -1,10 +1,4 @@
 import React, { useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import GalleryItem from './GalleryItem/GalleryItem';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import { Card } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';

@@ -11,11 +11,7 @@ import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faPlay,
-    faTrashAlt,
-    faRandom
-} from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faRandom } from '@fortawesome/free-solid-svg-icons';
 import ReactPlayer from 'react-player';
 import Nav from '../Nav/Nav';
 
@@ -55,7 +51,7 @@ const move = (source, destination, droppableSource, droppableDestination) => {
     return result;
 };
 
-const Main = ({showTour}) => {
+const Main = ({ showTour }) => {
     const [items, setItems] = useState([]);
     const [selected, setSelected] = useState([]);
     const [actualVideo, setActualVideo] = useState('');
@@ -66,7 +62,7 @@ const Main = ({showTour}) => {
 
     const videosContext = useContext(VideosContext);
     const { videos, getVideos } = videosContext;
-
+    // eslint-disable-next-line
     const [videosState, setVideosState] = useState([]);
 
     useEffect(() => {
@@ -151,7 +147,7 @@ const Main = ({showTour}) => {
                                     paddingLeft: '0px'
                                 }}
                             >
-                                <Nav showTour={showTour}/>
+                                <Nav showTour={showTour} />
                                 <Search searchVideos={searchVideos} />
                                 <Alert
                                     variant="dark"

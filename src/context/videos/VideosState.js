@@ -46,18 +46,18 @@ const obtenerVideos = (data) => {
 
     const videos = [];
 
-    if(data === null) return videos;
-     
-    data.data.items.map((item) => {
-        const video = {
-            img: item.snippet.thumbnails.high.url,
-            title: item.snippet.title,
-            author: item.snippet.channelTitle,
-            id: item.id.videoId,
-            fecha: item.snippet.publishTime,
-        }
-        videos.push(video);
-    })
-
+    if(data && data.data && data.data.items) {
+        data.data.items.forEach((item) => {
+            const video = {
+                img: item.snippet.thumbnails.high.url,
+                title: item.snippet.title,
+                author: item.snippet.channelTitle,
+                id: item.id.videoId,
+                fecha: item.snippet.publishTime,
+            }
+            videos.push(video);
+        })
+    }
+    
     return videos;
 }

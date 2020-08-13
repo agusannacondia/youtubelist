@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import { Card } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
@@ -43,7 +43,7 @@ const DragAndDrop = ({ selected, reorder, move }) => {
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
                                 >
-                                    <Card style={{ borderRadius: '15px', backgroundColor: index == 0 ? '#519872' : '#FFFFFF', margin: '5px' }} className="individualCard">
+                                    <Card style={{ borderRadius: '15px', backgroundColor: index === 0 ? '#519872' : '#FFFFFF', margin: '5px' }} className="individualCard">
                                         <Row style={{width: '100%', margin: 'auto'}}>
                                             <Col
                                                 xs={3}
@@ -64,13 +64,13 @@ const DragAndDrop = ({ selected, reorder, move }) => {
                                             </Col>
                                             <Col>
                                                 <Card.Body>
-                                                    <Card.Text style={{ color: index == 0 ? '#FFFFFF' : '#2D2F3D' }}>
+                                                    <Card.Text style={{ color: index === 0 ? '#FFFFFF' : '#2D2F3D' }}>
                                                         {substring(
                                                             item.title,
                                                             25
                                                         )}
                                                     </Card.Text>
-                                                    <Card.Title style={{ color: index == 0 ? '#FFFFFF' : '#2D2F3D' }}>
+                                                    <Card.Title style={{ color: index === 0 ? '#FFFFFF' : '#2D2F3D' }}>
                                                         {substring(
                                                             item.author,
                                                             15

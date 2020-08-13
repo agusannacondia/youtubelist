@@ -6,8 +6,6 @@ import VideosState from './context/videos/VideosState';
 
 function App() {
     const [isTourOpen, setOpen] = useState(false);
-    const [isShowingMore, setShowingMore] = useState(false);
-    const [customComps, setCustomComps] = useState(false);
     const accentColor = 'linear-gradient(to right, #1c8f9e, #5cb7b7)';
 
     const showTour = () => {
@@ -26,7 +24,7 @@ function App() {
                             color: '#CCCCCC'
                         }}
                     >
-                        Hecho con ❤️ por{' '}
+                        Hecho con <span role="img" aria-label="heart emoji">❤️</span> por{' '}
                         <a
                             href="https://agustinannacondia.site/"
                             target="__blank"
