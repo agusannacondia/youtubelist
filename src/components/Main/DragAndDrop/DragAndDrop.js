@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 
 const DragAndDrop = ({ selected, reorder, move }) => {
     useEffect(() => {
-        console.log(selected);
     }, [selected]);
 
     if (!selected || selected.length === 0)

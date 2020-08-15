@@ -24,7 +24,6 @@ const VideosState = (props) => {
                 payload: videos
             });
         } catch (error) {
-            console.log(error);
         }
     };
 
