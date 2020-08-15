@@ -16,10 +16,7 @@ const VideosState = (props) => {
     const getVideos = async (query) => {
         try {
             const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&type=video&key=${key}`; 
-            console.log(url);
-            const data = await clienteAxios.get(
-                url
-            );
+            const data = await clienteAxios.get(url);
             const videos = obtenerVideos(data);
             dispatch({
                 type: GET_VIDEOS,
