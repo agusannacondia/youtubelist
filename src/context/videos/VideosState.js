@@ -2,8 +2,8 @@ import React, { useReducer } from 'react';
 import VideosContext from './VideosContext';
 import VideosReducer from './VideosReducer';
 import { GET_VIDEOS } from '../../types';
-
-import clienteAxios from '../../config/axios.js';
+import { key } from '../../config/axios.js';
+import { clienteAxios }  from '../../config/axios.js';
 
 const VideosState = (props) => {
     const initialState = {
@@ -15,8 +15,10 @@ const VideosState = (props) => {
 
     const getVideos = async (query) => {
         try {
+            const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&type=video&key=${key}`; 
+            console.log(url);
             const data = await clienteAxios.get(
-                `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&type=video&key=${process.env.REACT_APP_API_KEY}`
+                url
             );
             const videos = obtenerVideos(data);
             dispatch({
